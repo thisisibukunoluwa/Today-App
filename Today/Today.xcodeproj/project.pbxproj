@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4EA2C70B2AB13B4700B005EA /* UIColor+Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA2C70A2AB13B4700B005EA /* UIColor+Today.swift */; };
+		4EA2C70D2AB13BA500B005EA /* Date+Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA2C70C2AB13BA500B005EA /* Date+Today.swift */; };
+		4EA2C7102AB1414A00B005EA /* ReminderListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA2C70F2AB1414A00B005EA /* ReminderListViewController+DataSource.swift */; };
 		4EB2D9672AABD3190027AE45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2D9662AABD3190027AE45 /* AppDelegate.swift */; };
 		4EB2D9692AABD3190027AE45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2D9682AABD3190027AE45 /* SceneDelegate.swift */; };
 		4EB2D96B2AABD3190027AE45 /* ReminderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2D96A2AABD3190027AE45 /* ReminderListViewController.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4EA2C70A2AB13B4700B005EA /* UIColor+Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Today.swift"; sourceTree = "<group>"; };
+		4EA2C70C2AB13BA500B005EA /* Date+Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today.swift"; sourceTree = "<group>"; };
+		4EA2C70F2AB1414A00B005EA /* ReminderListViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderListViewController+DataSource.swift"; sourceTree = "<group>"; };
 		4EB2D9632AABD3190027AE45 /* Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Today.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB2D9662AABD3190027AE45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EB2D9682AABD3190027AE45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EA2C70E2AB140DB00B005EA /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4EB2D96A2AABD3190027AE45 /* ReminderListViewController.swift */,
+				4EA2C70F2AB1414A00B005EA /* ReminderListViewController+DataSource.swift */,
+			);
+			path = ListViewController;
+			sourceTree = "<group>";
+		};
 		4EB2D95A2AABD3190027AE45 = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +122,7 @@
 				4EB2D9982AABE3D70027AE45 /* Models */,
 				4EB2D9662AABD3190027AE45 /* AppDelegate.swift */,
 				4EB2D9682AABD3190027AE45 /* SceneDelegate.swift */,
-				4EB2D96A2AABD3190027AE45 /* ReminderListViewController.swift */,
+				4EA2C70E2AB140DB00B005EA /* ListViewController */,
 				4EB2D96C2AABD3190027AE45 /* Main.storyboard */,
 				4EB2D96F2AABD31C0027AE45 /* Assets.xcassets */,
 				4EB2D9712AABD31C0027AE45 /* LaunchScreen.storyboard */,
@@ -137,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				4EB2D9992AABE3EE0027AE45 /* Reminder.swift */,
+				4EA2C70A2AB13B4700B005EA /* UIColor+Today.swift */,
+				4EA2C70C2AB13BA500B005EA /* Date+Today.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +292,9 @@
 			files = (
 				4EB2D96B2AABD3190027AE45 /* ReminderListViewController.swift in Sources */,
 				4EB2D9672AABD3190027AE45 /* AppDelegate.swift in Sources */,
+				4EA2C70B2AB13B4700B005EA /* UIColor+Today.swift in Sources */,
+				4EA2C70D2AB13BA500B005EA /* Date+Today.swift in Sources */,
+				4EA2C7102AB1414A00B005EA /* ReminderListViewController+DataSource.swift in Sources */,
 				4EB2D9692AABD3190027AE45 /* SceneDelegate.swift in Sources */,
 				4EB2D99A2AABE3EE0027AE45 /* Reminder.swift in Sources */,
 			);
