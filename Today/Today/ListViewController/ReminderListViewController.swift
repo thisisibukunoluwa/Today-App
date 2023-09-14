@@ -8,11 +8,11 @@
 import UIKit
 import Foundation
 
+
+/// View controller behaviours are in this file
+/// Because they have many responsibilities in UIKit apps, view controller files can be large. Reorganizing the view controller responsibilities into separate files and extensions makes it easier to find errors and add new features later.
+/// 
 class ReminderListViewController: UICollectionViewController {
-    
-    ///we made aliases for these types names because they are very long and it makes out code easier to read and write 
-    typealias DataSource = UICollectionViewDiffableDataSource<Int,String>
-    typealias SnapShot = NSDiffableDataSourceSnapshot<Int,String>
     
     var dataSource : DataSource!
     
@@ -23,13 +23,7 @@ class ReminderListViewController: UICollectionViewController {
         let listLayout = listLayout()
         collectionView.collectionViewLayout = listLayout
         
-        let cellRegistration = UICollectionView.CellRegistration {
-            (cell: UICollectionViewListCell, IndexPath:IndexPath,itemIdentifier:String) in
-            let reminder = Reminder.sampleData[IndexPath.item]
-            var contentConfiguration = cell.defaultContentConfiguration()
-            contentConfiguration.text = reminder.title
-            cell.contentConfiguration = contentConfiguration
-        }
+        let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         
         dataSource = DataSource(collectionView: collectionView) {
             (collectionView:UICollectionView, indexPath:IndexPath,itemIdentifier:String) in
