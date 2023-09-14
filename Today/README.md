@@ -32,4 +32,31 @@ The #if DEBUG flag is a compilation directive that prevents the enclosed code fr
 ## Compositional Layout 
 Compositional layout lets you construct views by combining different components: sections, groups, and items. A section represents the outer container view that surrounds a group of items.
 
+## Diffable Data Source 
+A diffable data source updates and animates the user interface when the data changes.
+
+## Cell Registration 
+Cell registration specifies how to configure the content and appearance of a cell.
+
+## Optional value 
+Use implicitly unwrapped optionals only when you know that the optional will have a value. Otherwise, you risk triggering a runtime error that immediately terminates the app. You’ll initialize the data source in the next step to guarantee that the optional has a value.
+
+
+UIKit provides a UICollectionView class that efficiently displays related items as cells in a scrollable view.
+Modern collection views automatically animate changes to the state of their data. And they help keep your code organized. UIKit provides diffable data sources, composable layouts, and cell configurations to create and update collection views. 
+
+Separation Of concerns 
+Data - DiffableDataSource 
+Layout - Compositional Layout 
+Presentation - list Cell View and Configuration 
+
+Modern collection views automatically animate changes to the state of their data. And they help keep your code organized. UIKit provides diffable data sources, composable layouts, and cell configurations to create and update collection views. 
+
+[how to make a collection list guide](https://developer.apple.com/tutorials/app-dev-training/adopting-collection-views)
+
+
+Use content configuration to set the cell’s tint and background colors, the text and secondary text font attributes, and the cell accessories.
+
+A diffable data source stores a list of identifiers that represents the identities of the items in the collection view.
+
 
