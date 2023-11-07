@@ -123,3 +123,15 @@ when you pass a closure as an argument, you need to label it as escaping if it�
 
 
 A UIKit control that uses the delegate pattern doesn’t need to know anything about the model. A control reports to their delegate only that an interaction or event has occurred. The delegate is responsible for responding accordingly.
+
+
+
+## Weak self 
+
+We add [weak self] to a closure’s capture list to prevent the view controller from capturing and storing a strong reference to the reminder list view controller.
+
+
+## Modality 
+Modality is a useful design technique you can use to help a user focus on a self-contained task that interrupts their current task, such as when they create a new reminder. 
+
+

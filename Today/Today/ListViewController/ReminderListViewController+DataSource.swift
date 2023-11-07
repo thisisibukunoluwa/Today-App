@@ -16,10 +16,13 @@ extension ReminderListViewController {
     var reminderCompletedValue:String {
         NSLocalizedString("Completed", comment: "Reminder completed value")
     }
+    
     var reminderNotCompletedValue:String {
         NSLocalizedString("Not Completed", comment: "Reminder not completed value")
     }
-    func updateSnapshot(reloading ids:[Reminder.ID] = []) {
+    
+    func updateSnapshot(reloading idsThatChanged:[Reminder.ID] = []) {
+        let ids = idsThatChanged.filter { id in filteredReminders.contains(where: { $0.id == id})}
         var snapshot = SnapShot()
         snapshot.appendSections([0])
 //        var reminderTitles = [String]()
@@ -27,12 +30,15 @@ extension ReminderListViewController {
 //            reminderTitles.append(reminder.title)
 //        }
 //        snapshot.appendItems(reminderTitles)
-        snapshot.appendItems(reminders.map{ $0.id})
+        snapshot.appendItems(filteredReminders.map{ $0.id})
+        
         if !ids.isEmpty {
             snapshot.reloadItems(ids)
         }
         dataSource.apply(snapshot)
+        headerView?.progress = progress 
     }
+    
     func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath:IndexPath, id:Reminder.ID){
         
         let reminder = reminder(withId: id)
@@ -64,12 +70,21 @@ extension ReminderListViewController {
         let index = reminders.indexOfReminder(withId: reminder.id)
         reminders[index] = reminder
     }
-    /// accepts a reminder and completes the reminder by toggling the isComplete property 
+    /// accepts a reminder and completes the reminder by toggling the isComplete property
     func completeReminder(withId id: Reminder.ID) {
         var reminder = reminder(withId: id)
         reminder.isComplete.toggle()
         updateReminder(reminder)
         updateSnapshot(reloading: [id])
+    }
+    
+    func addReminder(_ reminder:Reminder) {
+        reminders.append(reminder)
+    }
+    
+    func deleteReminder(withId id :Reminder.ID) {
+        let index = reminders.indexOfReminder(withId: id)
+        reminders.remove(at: index)
     }
     private func doneButtonAccessibilityAction(for reminder:Reminder) -> UIAccessibilityCustomAction {
         let name = NSLocalizedString("Toggle Completion",comment: "Reminder done button accessibility label")
